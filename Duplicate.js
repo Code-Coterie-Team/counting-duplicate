@@ -5,16 +5,14 @@ function duplicateCount(inputstring){
         countword[element] = (countword[element] || 0 ) +1;
     })
 
-
+    const duplicate = [];
     for ( const [word,count] of Object.entries(countword)){
             if(count>1){
-                const words = [word];
-                return words;
-            }
-            else{
-                return "no characters repeats more than once";
+            duplicate.push(word);
             }
         }
+        
+    return duplicate.length > 0 ? duplicate : "no characters repeat more than once";
         }
-let result = duplicateCount("abcbbbcd")
+let result = duplicateCount("")
 console.log(result);
